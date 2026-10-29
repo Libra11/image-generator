@@ -1,0 +1,28 @@
+[package]
+name = "image-generator"
+version = "0.1.0"
+description = "Desktop image generator powered by Tauri and DashScope compatible APIs"
+authors = ["Libra"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "image_generator_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+idna = "=1.0.3"
+reqwest = { version = "0.11.27", default-features = false, features = ["json", "rustls-tls", "multipart"] }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.11.2", features = [] }
+url = "=2.5.4"
+tauri-plugin-opener = "2.5.4"
